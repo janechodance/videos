@@ -1,12 +1,15 @@
 import React from "react";
-
-const VideoItem = (props) =>{
-    const videoURL = props.video.snippet.thumbnails.default
-    const name = props.video.snippet.title
+import './VideoItem.css';
+const VideoItem = ({video}) =>{
+    const image = video.snippet.thumbnails.default.url
+    const name = video.snippet.title
     return(
-    <div>
-        Name: {name}
-       <video src={videoURL}/>
-    </div>)
+    <div className="video-item item">
+        <img className= "ui image" src={image}/>
+        <div className="content">
+        <h4 className="header">Name: {name}</h4>
+        </div>
+    </div>
+    );
 };
 export default VideoItem;
